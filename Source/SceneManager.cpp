@@ -491,6 +491,7 @@ void SceneManager::LoadSceneTextures() {
 	bReturn = CreateGLTexture("textures/brick.jpg", "brick");
 	bReturn = CreateGLTexture("textures/cPlusPlus.jpg", "cpp");
 	bReturn = CreateGLTexture("textures/coconutWater.png", "cocoWater");
+	bReturn = CreateGLTexture("textures/wooden.jpg", "wood");
 
 	// binds all of the images into texture
 	BindGLTextures();
@@ -547,15 +548,15 @@ void SceneManager::RenderScene()
 	// PLANE SHAPE (TABLE)
 
 	// set the XYZ scale for the mesh
-	scaleXYZ = glm::vec3(30.0f, 1.0f, 10.0f);
+	scaleXYZ = glm::vec3(16.0f, 8.0f, 5.0f);
 
 	// set the XYZ rotation for the mesh
-	XrotationDegrees = 90.0f;
+	XrotationDegrees = 0.0f;
 	YrotationDegrees = 0.0f;
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(0.0f, -8.0f, -1.0f);
+	positionXYZ = glm::vec3(0.0f, 0.0f, -1.0f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -565,8 +566,9 @@ void SceneManager::RenderScene()
 		ZrotationDegrees,
 		positionXYZ);
 
-	SetShaderColor(1, 1, 1, 0.3);
-	SetShaderMaterial("floor");
+	SetShaderTexture("wood");
+	SetTextureUVScale(1.0, 1.0);
+	//SetShaderMaterial("floor");
 
 	// draw the mesh with transformation values
 	m_basicMeshes->DrawPlaneMesh();
@@ -583,7 +585,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(-6.5f, -1.0f, 1.5f);
+	positionXYZ = glm::vec3(-10.5f, 0.0f, 1.5f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -611,7 +613,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(-5.0f, -5.0f, 0.0f);
+	positionXYZ = glm::vec3(-5.0f, 1.5f, 0.0f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -639,7 +641,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(5.0f, 4.0f, -1.0f);
+	positionXYZ = glm::vec3(10.0f, 6.0f, -1.0f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -659,7 +661,7 @@ void SceneManager::RenderScene()
 	// BOX SHAPE (TEXTBOOK COVER)
 
 	// set the XYZ scale for the mesh
-	scaleXYZ = glm::vec3(8.0f, 3.0f, 8.0f);
+	scaleXYZ = glm::vec3(6.0f, 1.5f, 6.0f);
 
 	// set the XYZ rotation for the mesh
 	XrotationDegrees = 0.0f;
@@ -667,7 +669,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(3.0f, -3.0f, 0.8f);
+	positionXYZ = glm::vec3(3.0f, 0.8f, 0.8f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -687,7 +689,7 @@ void SceneManager::RenderScene()
 	// TORUS SHAPE (COCONUT WATER TOP OF THE CAN)
 
 	// set the XYZ scale for the mesh
-	scaleXYZ = glm::vec3(1.0f, 1.0f, 1.0f);
+	scaleXYZ = glm::vec3(1.1f, 1.1f, 1.1f);
 
 	// set the XYZ rotation for the mesh
 	XrotationDegrees = 90.0f;
@@ -695,7 +697,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(-6.5f, 5.2f, 1.5f);
+	positionXYZ = glm::vec3(-10.5f, 6.0f, 1.5f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -714,7 +716,7 @@ void SceneManager::RenderScene()
 	// BOX SHAPE (TEXTBOOK PAPERS)
 
 	// set the XYZ scale for the mesh
-	scaleXYZ = glm::vec3(7.5f, 2.5f, 7.8f);
+	scaleXYZ = glm::vec3(5.9f, 1.1f, 6.3f);
 
 	// set the XYZ rotation for the mesh
 	XrotationDegrees = 0.0f;
@@ -722,7 +724,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(3.2f, -3.0f, 1.0f);
+	positionXYZ = glm::vec3(3.1f, 0.8f, 0.69f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
