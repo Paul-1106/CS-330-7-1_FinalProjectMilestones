@@ -492,6 +492,9 @@ void SceneManager::LoadSceneTextures() {
 	bReturn = CreateGLTexture("textures/cPlusPlus.jpg", "cpp");
 	bReturn = CreateGLTexture("textures/coconutWater.png", "cocoWater");
 	bReturn = CreateGLTexture("textures/wooden.jpg", "wood");
+	bReturn = CreateGLTexture("textures/python.jpg", "python");
+	bReturn = CreateGLTexture("textures/darkWood.jpg", "dark wood");
+	bReturn = CreateGLTexture("textures/rust.jpg", "rust");
 
 	// binds all of the images into texture
 	BindGLTextures();
@@ -548,7 +551,7 @@ void SceneManager::RenderScene()
 	// PLANE SHAPE (TABLE)
 
 	// set the XYZ scale for the mesh
-	scaleXYZ = glm::vec3(16.0f, 8.0f, 5.0f);
+	scaleXYZ = glm::vec3(20.0f, 1.0f, 15.0f);
 
 	// set the XYZ rotation for the mesh
 	XrotationDegrees = 0.0f;
@@ -738,4 +741,87 @@ void SceneManager::RenderScene()
 
 	// draw the mesh with transformation values
 	m_basicMeshes->DrawBoxMesh();
+	/****************************************************************/
+
+	// BOX SHAPE (TEXTBOOK COVER #2)
+
+	// set the XYZ scale for the mesh
+	scaleXYZ = glm::vec3(6.0f, 1.5f, 6.0f);
+
+	// set the XYZ rotation for the mesh
+	XrotationDegrees = 0.0f;
+	YrotationDegrees = 0.0f;
+	ZrotationDegrees = 0.0f;
+
+	// set the XYZ position for the mesh
+	positionXYZ = glm::vec3(10.0f, 0.8f, 5.8f);
+
+	// set the transformations into memory to be used on the drawn meshes
+	SetTransformations(
+		scaleXYZ,
+		XrotationDegrees,
+		YrotationDegrees,
+		ZrotationDegrees,
+		positionXYZ);
+
+	SetShaderTexture("python");
+	SetTextureUVScale(1.0, 1.0);
+
+	// draw the mesh with transformation values
+	m_basicMeshes->DrawBoxMesh();
+	/****************************************************************/
+
+	// BOX SHAPE (TEXTBOOK PAPERS #2)
+
+	// set the XYZ scale for the mesh
+	scaleXYZ = glm::vec3(5.9f, 1.0f, 6.3f);
+
+	// set the XYZ rotation for the mesh
+	XrotationDegrees = 0.0f;
+	YrotationDegrees = 0.0f;
+	ZrotationDegrees = 0.0f;
+
+	// set the XYZ position for the mesh
+	positionXYZ = glm::vec3(10.1f, 0.8f, 5.8f);
+
+	// set the transformations into memory to be used on the drawn meshes
+	SetTransformations(
+		scaleXYZ,
+		XrotationDegrees,
+		YrotationDegrees,
+		ZrotationDegrees,
+		positionXYZ);
+
+	SetShaderColor(1, 1, 1, 1);
+
+	// draw the mesh with transformation values
+	m_basicMeshes->DrawBoxMesh();
+	/****************************************************************/
+
+	// CYLINDER SHAPE (COCONUT WATER CAN)
+
+	// set the XYZ scale for the mesh
+	scaleXYZ = glm::vec3(1.2f, 6.0f, 1.2f);
+
+	// set the XYZ rotation for the mesh
+	XrotationDegrees = 0.0f;
+	YrotationDegrees = 0.0f;
+	ZrotationDegrees = 0.0f;
+
+	// set the XYZ position for the mesh
+	positionXYZ = glm::vec3(0.5f, 0.0f, -5.5f);
+
+	// set the transformations into memory to be used on the drawn meshes
+	SetTransformations(
+		scaleXYZ,
+		XrotationDegrees,
+		YrotationDegrees,
+		ZrotationDegrees,
+		positionXYZ);
+
+	SetShaderTexture("dark wood");
+	SetTextureUVScale(1.0, 1.0);
+
+	// draw the mesh with transformation values
+	m_basicMeshes->DrawCylinderMesh();
 }
