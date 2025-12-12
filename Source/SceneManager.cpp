@@ -495,6 +495,8 @@ void SceneManager::LoadSceneTextures() {
 	bReturn = CreateGLTexture("textures/python.jpg", "python");
 	bReturn = CreateGLTexture("textures/darkWood.jpg", "dark wood");
 	bReturn = CreateGLTexture("textures/rust.jpg", "rust");
+	bReturn = CreateGLTexture("textures/amethyst.jpg", "amethyst");
+	bReturn = CreateGLTexture("textures/grass.jpg", "grass");
 
 	// binds all of the images into texture
 	BindGLTextures();
@@ -683,7 +685,7 @@ void SceneManager::RenderScene()
 		positionXYZ);
 
 	SetShaderTexture("cpp");
-	SetTextureUVScale(1.0, 2.0);
+	SetTextureUVScale(1.0, 1.0);
 
 	// draw the mesh with transformation values
 	m_basicMeshes->DrawBoxMesh();
@@ -754,7 +756,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(10.0f, 0.8f, 5.8f);
+	positionXYZ = glm::vec3(-4.0f, 0.8f, 7.8f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -782,7 +784,7 @@ void SceneManager::RenderScene()
 	ZrotationDegrees = 0.0f;
 
 	// set the XYZ position for the mesh
-	positionXYZ = glm::vec3(10.1f, 0.8f, 5.8f);
+	positionXYZ = glm::vec3(-3.9f, 0.8f, 7.8f);
 
 	// set the transformations into memory to be used on the drawn meshes
 	SetTransformations(
@@ -798,7 +800,7 @@ void SceneManager::RenderScene()
 	m_basicMeshes->DrawBoxMesh();
 	/****************************************************************/
 
-	// CYLINDER SHAPE (COCONUT WATER CAN)
+	// CYLINDER SHAPE (LOG)
 
 	// set the XYZ scale for the mesh
 	scaleXYZ = glm::vec3(1.2f, 6.0f, 1.2f);
@@ -824,4 +826,120 @@ void SceneManager::RenderScene()
 
 	// draw the mesh with transformation values
 	m_basicMeshes->DrawCylinderMesh();
+
+	/****************************************************************/
+
+	// BOX SHAPE (TEXTBOOK COVER #3)
+
+	// set the XYZ scale for the mesh
+	scaleXYZ = glm::vec3(6.0f, 1.5f, 6.0f);
+
+	// set the XYZ rotation for the mesh
+	XrotationDegrees = 0.0f;
+	YrotationDegrees = 0.0f;
+	ZrotationDegrees = 0.0f;
+
+	// set the XYZ position for the mesh
+	positionXYZ = glm::vec3(0.5f, 8.0f, -4.5f);
+
+	// set the transformations into memory to be used on the drawn meshes
+	SetTransformations(
+		scaleXYZ,
+		XrotationDegrees,
+		YrotationDegrees,
+		ZrotationDegrees,
+		positionXYZ);
+
+	SetShaderTexture("rust");
+	SetTextureUVScale(1.0, 1.0);
+
+	// draw the mesh with transformation values
+	m_basicMeshes->DrawBoxMesh();
+
+	/****************************************************************/
+
+	// CYLINDER SHAPE (BOOK HOLDER)
+
+	// set the XYZ scale for the mesh
+	scaleXYZ = glm::vec3(4.0f, 1.0f, 4.0f);
+
+	// set the XYZ rotation for the mesh
+	XrotationDegrees = 0.0f;
+	YrotationDegrees = 0.0f;
+	ZrotationDegrees = 0.0f;
+
+	// set the XYZ position for the mesh
+	positionXYZ = glm::vec3(0.5f, 6.0f, -5.5f);
+
+	// set the transformations into memory to be used on the drawn meshes
+	SetTransformations(
+		scaleXYZ,
+		XrotationDegrees,
+		YrotationDegrees,
+		ZrotationDegrees,
+		positionXYZ);
+
+	SetShaderTexture("amethyst");
+	SetTextureUVScale(1.0, 1.0);
+
+	// draw the mesh with transformation values
+	m_basicMeshes->DrawCylinderMesh();
+
+	/****************************************************************/
+
+	// BOX SHAPE (TEXTBOOK PAPERS #3)
+
+	// set the XYZ scale for the mesh
+	scaleXYZ = glm::vec3(5.9f, 1.0f, 6.3f);
+
+	// set the XYZ rotation for the mesh
+	XrotationDegrees = 0.0f;
+	YrotationDegrees = 0.0f;
+	ZrotationDegrees = 0.0f;
+
+	// set the XYZ position for the mesh
+	positionXYZ = glm::vec3(0.6f, 8.0f, -4.5f);
+
+	// set the transformations into memory to be used on the drawn meshes
+	SetTransformations(
+		scaleXYZ,
+		XrotationDegrees,
+		YrotationDegrees,
+		ZrotationDegrees,
+		positionXYZ);
+
+	SetShaderColor(1, 1, 1, 1);
+
+	// draw the mesh with transformation values
+	m_basicMeshes->DrawBoxMesh();
+
+	/****************************************************************/
+
+	// TORUS SHAPE (COVERS THE WHOLE TABLE)
+
+	// set the XYZ scale for the mesh
+	scaleXYZ = glm::vec3(20.1f, 20.1f, 5.1f);
+
+	// set the XYZ rotation for the mesh
+	XrotationDegrees = 90.0f;
+	YrotationDegrees = 0.0f;
+	ZrotationDegrees = 0.0f;
+
+	// set the XYZ position for the mesh
+	positionXYZ = glm::vec3(0.0f, 0.0f, -3.0f);
+
+	// set the transformations into memory to be used on the drawn meshes
+	SetTransformations(
+		scaleXYZ,
+		XrotationDegrees,
+		YrotationDegrees,
+		ZrotationDegrees,
+		positionXYZ);
+
+	//SetShaderColor(0.792, 0.792, 0.792, 1);
+	SetShaderTexture("grass");
+	SetTextureUVScale(1.0, 1.0);
+
+	// draw the mesh with transformation values
+	m_basicMeshes->DrawTorusMesh();
 }
